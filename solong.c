@@ -6,77 +6,13 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:11:14 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/01 23:59:31 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 00:03:22 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solong.h"
 
-int	ft_strlen(char *str)
-{
-	int	i;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-void	error(void)
-{
-	puts(mlx_strerror(mlx_errno));
-	exit(EXIT_FAILURE);
-}
-
-/***
-* fill_table-function that set the map to '\0' to stop printing
-* @x:structure that contain the map
-* Return: nothing we will change the map directly.
-**/
-void	fill_table(t_vars **x)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < (*x)->m_height)
-	{
-		j = 0;
-		while (j < (*x)->m_width)
-		{
-			(*x)->map[i][j] = '\0';
-			j++;
-		}
-		i++;
-	}
-}
-/***
-* e_width- get the perfect position of the exit image
-* @x: the structure that contain map width
-* Return:the position in x which we can put the exit img
-**/
-
-int	e_width(t_vars **x)
-{
-	int	width;
-
-	width = (((*x)->m_width * 80) / 2) - 200;
-	return (width);
-}
-
-/***
-* e_height- get the perfect position of the exit image
-* @x: the structure that contain map height
-* Return:the position in x which we can put the exit img
-**/
-
-int	e_height(t_vars **x)
-{
-	int	height;
-
-	height = (((*x)->m_height * 80) / 2) - 100;
-	return (height);
-}
 
 void	ft_hook(mlx_key_data_t keydata, void *param)
 {
@@ -117,42 +53,6 @@ void	mlx_closehook(void* param)
 	exit(0);
 }
 
-// void mlx_close_hook(mlx_t* mlx, mlx_closefunc func, void* param);
-
-// void mlx_scroll_hook(mlx_t* mlx, mlx_scrollfunc func, void* param);
-// 	mlx_scroll_hook(mlx, &my_scrollhook, NULL);
-
-// void my_scrollhook(double xdelta, double ydelta, void* param)
-
-
-// void	create_map(t_vars *x, int rows, int cols)
-// {
-// 	int	i;
-// 	int	j;
-
-// 	i = 0;
-// 	while (i < rows)
-// 	{
-// 		j = 0;
-// 		while (j < cols)
-// 		{
-// 			if (x->map[i][j] == '0')
-// 				mlx_image_to_window(x->mlx, x->img[0], j * 80, i * 80);
-// 			else if (x->map[i][j] == '1')
-// 				mlx_image_to_window(x->mlx, x->img[1], j * 80, i * 80);
-// 			else if (x->map[i][j] == 'C')
-// 				mlx_image_to_window(x->mlx, x->img[2], j * 80, i * 80);
-// 			else if (x->map[i][j] == 'E')
-// 				mlx_image_to_window(x->mlx, x->img[3], j * 80, i * 80);
-// 			else if (x->map[i][j] == 'P')
-// 				mlx_image_to_window(x->mlx, x->img[4], j * 80, i * 80);
-// 			else if (x->map[i][j] == 'H')
-// 				mlx_image_to_window(x->mlx, x->img[5], j * 80, i * 80);
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// }
 
 void	create_map(t_vars *x, int rows, int cols)
 {

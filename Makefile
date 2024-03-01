@@ -12,7 +12,7 @@ INC		:=	-I $(LIBMLX)/include
 SRCS	:=	get_next_line/get_next_line_utils.c \
 			get_next_line/get_next_line.c \
 			create_table.c game_logic.c \
-			setup_all.c solong.c \
+			setup_all.c solong.c extra.c \
 			validate_map_extension.c \
 			validate_map_objects.c \
 			validate_map_path.c \

@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:16:09 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/01 23:07:37 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 00:05:32 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,10 @@ void	game_logic_right(t_vars **x);
 void	game_logic_left(t_vars **x);
 void	game_logic_down(t_vars **x);
 void	game_logic_up(t_vars **x);
+void	fill_table(t_vars **x);
+int		e_width(t_vars **x);
+int		e_height(t_vars **x);
+
 
 /** map validation */
 int		check_width(char *line, int index);
