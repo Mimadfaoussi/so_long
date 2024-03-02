@@ -42,7 +42,7 @@ clean:
 	@rm -rf $(LIBMLX)
 
 fclean: clean
-	@echo "Cleaning solong"
+	@echo "Cleaning so_long"
 	@rm -f $(NAME)
 
 re: clean all
