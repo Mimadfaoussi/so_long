@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:13:03 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/01 23:01:56 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 00:28:33 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int	get_map_width(char *filename)
 		free(str);
 		str = get_next_line(fd);
 	}
+	free(str);
 	close(fd);
 	return (i);
 }
@@ -97,23 +98,23 @@ int	start_mlx(t_vars **x)
 	return (0);
 }
 
-void	clean_up(t_vars *x)
+void	clean_up(t_vars **x)
 {
-	mlx_delete_image(x->mlx, x->img[1]);
-	mlx_delete_image(x->mlx, x->img[2]);
-	mlx_delete_image(x->mlx, x->img[3]);
-	mlx_delete_image(x->mlx, x->img[4]);
-	mlx_delete_image(x->mlx, x->img[5]);
-	mlx_delete_image(x->mlx, x->img[6]);
-	mlx_delete_image(x->mlx, x->img[7]);
-	mlx_delete_texture(x->texture[1]);
-	mlx_delete_texture(x->texture[2]);
-	mlx_delete_texture(x->texture[3]);
-	mlx_delete_texture(x->texture[4]);
-	mlx_delete_texture(x->texture[5]);
-	mlx_delete_texture(x->texture[6]);
-	mlx_delete_texture(x->texture[7]);
-	mlx_close_window((x)->mlx);
-	mlx_terminate(x->mlx);
-	free(x);
+	mlx_delete_image((*x)->mlx, (*x)->img[2]);
+	mlx_delete_image((*x)->mlx, (*x)->img[1]);
+	mlx_delete_image((*x)->mlx, (*x)->img[3]);
+	mlx_delete_image((*x)->mlx, (*x)->img[4]);
+	mlx_delete_image((*x)->mlx, (*x)->img[5]);
+	mlx_delete_image((*x)->mlx, (*x)->img[6]);
+	mlx_delete_image((*x)->mlx, (*x)->img[7]);
+	mlx_delete_texture((*x)->texture[1]);
+	mlx_delete_texture((*x)->texture[2]);
+	mlx_delete_texture((*x)->texture[3]);
+	mlx_delete_texture((*x)->texture[4]);
+	mlx_delete_texture((*x)->texture[5]);
+	mlx_delete_texture((*x)->texture[6]);
+	mlx_delete_texture((*x)->texture[7]);
+	mlx_close_window((*x)->mlx);
+	mlx_terminate((*x)->mlx);
+	free(*x);
 }

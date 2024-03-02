@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:24:16 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/01 22:54:43 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 01:44:19 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,34 +82,36 @@ void	create_table(char *filename, t_vars **x, int width, int height)
 	close(fd);
 }
 
+void	ft_putnbr(int nb)
+{
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+		ft_putnbr(nb);
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putchar(nb % 10 + '0');
+	}
+	if (nb < 10)
+		ft_putchar(nb + '0');
+}
 
-// print stuff 
+void	ft_putstr(char *str)
+{
+	int	i;
 
-// for (i = 0; i < (*x)->m_height; i++) {
-//     for (j = 0; j < (*x)->m_width; j++) {
-//         printf("%c ", (*x)->map[i][j]);
-//     }
-//     printf("\n");
-// }
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
 
-
-// int main(void)
-// {
-// 	int fd;
-// 	char	tab[100][100];
-
-// 	fd = open("./maps/map.bef",O_RDONLY);
-// 	if (fd == -1)
-// 		return (1);
-// 	create_table(fd, tab, 13, 5);
-
-// 	for (int i = 0; i < 5; i++)
-// 	{
-//         for (int j = 0; j < 13; j++)
-// 		{
-//             printf("%c ", tab[i][j]);
-//         }
-//         printf("\n");
-//     }
-// 	return (0);
-// }
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}

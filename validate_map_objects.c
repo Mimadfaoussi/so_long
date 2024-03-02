@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:28:50 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/01 22:57:18 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 01:28:27 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ t_map	*get_map_objects(int fd)
 		free(line);
 		line = get_next_line(fd);
 	}
+	free(line);
 	close(fd);
 	return (map);
 }
@@ -63,11 +64,11 @@ t_map	*get_map_objects(int fd)
 * Return 1 valid map and 0 for non valid
 */
 
-int	validate_map_objects(t_map *map_ref)
+int	validate_map_objects(t_map **map_ref)
 {
 	t_map	*map;
 
-	map = map_ref;
+	map = *map_ref;
 	if (map->m_exit != 1 || map->m_player != 1 || map->m_collectible < 1)
 	{
 		free(map);

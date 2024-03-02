@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:07:34 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/01 22:58:31 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 01:31:27 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int	check_borders(int fd, int nb_lines)
 		free(line);
 		line = get_next_line(fd);
 	}
+	free(line);
 	return (1);
 }
 
@@ -127,7 +128,7 @@ int	valid_all(char *filename)
 	}
 	fd = open(filename, O_RDONLY);
 	map = get_map_objects(fd);
-	if (validate_map_objects(map) != 1)
+	if (validate_map_objects(&map) != 1)
 	{
 		printf("bad obj");
 		return (0);
@@ -162,9 +163,3 @@ int	valid_all_2(char *filename, int nb_lines)
 	close(fd);
 	return (1);
 }
-
-// int main(int argc, char **argv)
-// {
-// 	printf("%d\n",valid_all(argv[1]));
-// 	return (0);
-// }

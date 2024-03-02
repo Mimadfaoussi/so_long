@@ -6,25 +6,12 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:09:18 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/01 22:56:39 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 00:32:30 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solong.h"
 
-/**
-* ft_strlen - get the length of a string str 
-**/
-
-// int	ft_strlen(char *str)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (str[i])
-// 		i++;
-// 	return (i);
-// }
 /**
 * is_same-checks if s1 and s2 are the same 
 * return 1 if they are the same  otherwise return 0
@@ -104,6 +91,7 @@ int	get_line_width(char *filename)
 		free(line);
 		line = get_next_line(fd);
 	}
+	free(line);
 	close(fd);
 	return (width);
 }

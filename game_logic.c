@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:48:22 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/01 22:55:15 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 01:53:48 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void	game_logic_up(t_vars **x)
 		if ((*x)->game_over != 1)
 		{
 			(*x)->move_count++;
-			printf("%d\n",(*x)->move_count);
+			ft_putstr("MOVES NUMBER : ");
+			ft_putnbr((*x)->move_count);
+			ft_putchar('\n');
 		}
 	}
 }
@@ -59,7 +61,9 @@ void	game_logic_down(t_vars **x)
 		if ((*x)->game_over != 1)
 		{
 			(*x)->move_count++;
-			printf("%d\n",(*x)->move_count);
+			ft_putstr("MOVES NUMBER : ");
+			ft_putnbr((*x)->move_count);
+			ft_putchar('\n');
 		}
 	}
 }
@@ -85,7 +89,9 @@ void	game_logic_left(t_vars **x)
 		if ((*x)->game_over != 1)
 		{
 			(*x)->move_count++;
-			printf("%d\n",(*x)->move_count);
+			ft_putstr("MOVES NUMBER : ");
+			ft_putnbr((*x)->move_count);
+			ft_putchar('\n');
 		}
 	}
 }
@@ -111,9 +117,10 @@ void	game_logic_right(t_vars **x)
 		if ((*x)->game_over != 1)
 		{
 			(*x)->move_count++;
-			printf("%d\n",(*x)->move_count);
+			ft_putstr("MOVES NUMBER : ");
+			ft_putnbr((*x)->move_count);
+			ft_putchar('\n');
 		}
-
 	}
 }
 //gcc solong.c setup_all.c create_table.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c game_logic.c ../libmlx42.a -lglfw -framework Cocoa -framework OpenGL -framework IOKit -o exec

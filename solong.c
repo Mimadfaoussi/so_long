@@ -6,13 +6,11 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:11:14 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 00:03:22 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 01:38:15 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solong.h"
-
-
 
 void	ft_hook(mlx_key_data_t keydata, void *param)
 {
@@ -21,8 +19,8 @@ void	ft_hook(mlx_key_data_t keydata, void *param)
 	x = param;
 	if (mlx_is_key_down((*x)->mlx, MLX_KEY_ESCAPE))
 	{
-		//system("leaks exec");
-		clean_up(*x);
+		clean_up(x);
+		system("leaks solong");
 		exit(0);
 	}
 	if (keydata.key == MLX_KEY_UP && keydata.action == MLX_RELEASE)
@@ -43,16 +41,14 @@ void	ft_hook(mlx_key_data_t keydata, void *param)
 	create_map(*x, (*x)->m_height, (*x)->m_width);
 }
 
-void	mlx_closehook(void* param)
+void	mlx_closehook(void *param)
 {
 	t_vars	**x;
 
 	x = param;
-	//system("leaks exec");
-	clean_up(*x);
+	clean_up(x);
 	exit(0);
 }
-
 
 void	create_map(t_vars *x, int rows, int cols)
 {
@@ -94,18 +90,17 @@ int	main(int argc, char **argv)
 	if (check_valid_path(&x) == 0)
 	{
 		printf("not valid path no exit or collectibles");
-		clean_up(x);
+		clean_up(&x);
 		return (1);
 	}
 	if (!x->mlx)
-		error();
+		return (1);
 	setup_img(x);
 	create_map(x, x->m_height, x->m_width);
 	mlx_key_hook(x->mlx, &ft_hook, &x);
 	mlx_close_hook(x->mlx, &mlx_closehook, &x);
 	mlx_loop(x->mlx);
-	clean_up(x);
-	// system("leaks exec");
+	clean_up(&x);
 	return (EXIT_SUCCESS);
 }
 //./exec ./maps/map.bef

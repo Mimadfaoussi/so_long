@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:16:09 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 00:05:32 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 01:46:24 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct vars{
 
 void	create_map(t_vars *x, int rows, int cols);
 void	setup_img(t_vars *x);
-void	clean_up(t_vars *x);
+void	clean_up(t_vars **x);
 void	error(void);
 //void	ft_hook(void *param);
 void	ft_hook(mlx_key_data_t keydata, void *param);
@@ -95,14 +95,13 @@ void	fill_table(t_vars **x);
 int		e_width(t_vars **x);
 int		e_height(t_vars **x);
 
-
 /** map validation */
 int		check_width(char *line, int index);
 int		check_borders(int fd, int nb_lines);
 int		check_map_rectangular(int fd, int height, int width);
 void	init_validate_map(t_map **map);
 t_map	*get_map_objects(int fd);
-int		validate_map_objects(t_map *map_ref);
+int		validate_map_objects(t_map **map_ref);
 int		is_same(char *s1, char *s2);
 int		check_map_extension(char *filename);
 int		get_nb_lines(int fd);
@@ -111,5 +110,7 @@ int		valid_all_2(char *filename, int nb_lines);
 int		get_line_width(char *filename);
 void	floodfill(t_vars **x, int pos_x, int pos_y);
 int		check_valid_path(t_vars **x);
-
+void	ft_putnbr(int nb);
+void	ft_putstr(char *str);
+void	ft_putchar(char c);
 #endif
