@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:11:14 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 05:58:15 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:07:06 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ void	create_map(t_vars *x, int rows, int cols)
 	}
 }
 
-
 int	main(int argc, char **argv)
 {
 	t_vars	*x;
@@ -108,7 +107,5 @@ int	main(int argc, char **argv)
 	return (EXIT_SUCCESS);
 }
 
-
 // atexit(&leaks);
 //./exec ./maps/map.bef
-// gcc  game_logic.c validate_map_extension.c validate_map_rectangular.c validate_map_objects.c solong.c setup_all.c create_table.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c ../libmlx42.a -lglfw -framework Cocoa -framework OpenGL -framework IOKit -o exec

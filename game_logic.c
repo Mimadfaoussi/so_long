@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:48:22 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 01:53:48 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:06:38 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,4 +123,3 @@ void	game_logic_right(t_vars **x)
 		}
 	}
 }
-//gcc solong.c setup_all.c create_table.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c game_logic.c ../libmlx42.a -lglfw -framework Cocoa -framework OpenGL -framework IOKit -o exec

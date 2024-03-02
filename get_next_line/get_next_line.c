@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 09:42:39 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 05:30:27 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:15:28 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,4 +119,3 @@ char	*get_next_line(int fd)
 	rearrange(&head);
 	return (next_line);
 }
-
