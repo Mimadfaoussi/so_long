@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:16:09 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 05:37:18 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:32:32 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,4 +113,6 @@ int		check_valid_path(t_vars **x);
 void	ft_putnbr(int nb);
 void	ft_putstr(char *str);
 void	ft_putchar(char c);
+void	check_arguments(void);
+
 #endif

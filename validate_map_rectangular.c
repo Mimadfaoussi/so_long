@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:07:34 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 05:27:37 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:28:28 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ int	valid_all(char *filename)
 	map = get_map_objects(fd);
 	if (validate_map_objects(&map) != 1)
 	{
-		ft_putstr("Objects  not valid");
+		ft_putstr("not valid MAP");
 		return (0);
 	}
 	fd = open(filename, O_RDONLY);

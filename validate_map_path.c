@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:04:08 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 17:07:33 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:33:50 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,10 @@ int	check_valid_path(t_vars **x)
 		return (0);
 	}
 	return (1);
+}
+
+void	check_arguments(void)
+{
+	ft_putstr("wrong number of arguments , usage : ./so_long map.ber\n");
+	exit(1);
 }

@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:11:14 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 17:07:06 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:30:33 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	main(int argc, char **argv)
 	t_vars	*x;
 
 	if (argc != 2)
-		return (1);
+		check_arguments();
 	if (valid_all(argv[1]) == 0)
 		return (1);
 	if (start_mlx(&x, argv[1]) == 1)
