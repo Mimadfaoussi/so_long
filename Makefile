@@ -5,6 +5,7 @@ CFLAGS	:=	-Wextra -Wall -Werror
 
 LIBMLX	:=	./MLX42
 LIBS	:=	$(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
+MLX_URL = https://github.com/codam-coding-college/MLX42.git
 
 INC		:=	-I $(LIBMLX)/include
 
@@ -24,6 +25,7 @@ all: libmlx $(NAME)
 
 libmlx:
 	@echo "Making MLX42..."
+	@git clone $(MLX_URL)
 	@cmake $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
 
 %.o: %.c
@@ -37,6 +39,7 @@ clean:
 	@echo "Cleaning object files..."
 	@rm -rf $(OBJS)
 	@rm -rf $(LIBMLX)/build
+	@rm -rf $(LIBMLX)
 
 fclean: clean
 	@echo "Cleaning solong"
