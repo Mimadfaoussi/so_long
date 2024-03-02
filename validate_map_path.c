@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:04:08 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 17:33:50 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 18:50:25 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,18 +63,18 @@ int	check_valid_path(t_vars **x)
 {
 	if (check_the_map(x) == 0)
 	{
-		ft_putstr("Invalid Map charracter \n");
+		ft_putstr("Error\nInvalid Map charracter \n");
 		return (0);
 	}
 	floodfill(x, (*x)->pos_x, (*x)->pos_y);
 	if ((*x)->valid_path == 0)
 	{
-		ft_putstr("No valid path to the exit\n");
+		ft_putstr("Error\nNo valid path to the exit\n");
 		return (0);
 	}
 	if ((*x)->valid_collectible != (*x)->collectible)
 	{
-		ft_putstr("can't reach all the collectibles\n");
+		ft_putstr("Error\ncan't reach all the collectibles\n");
 		return (0);
 	}
 	return (1);
@@ -82,6 +82,6 @@ int	check_valid_path(t_vars **x)
 
 void	check_arguments(void)
 {
-	ft_putstr("wrong number of arguments , usage : ./so_long map.ber\n");
+	ft_putstr("Error\nusage : ./so_long map.ber\n");
 	exit(1);
 }

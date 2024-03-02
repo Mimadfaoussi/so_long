@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:07:34 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 17:28:28 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 18:51:01 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,14 +122,14 @@ int	valid_all(char *filename)
 
 	if (check_map_extension(filename) == 1)
 	{
-		ft_putstr("Wrong File extension");
+		ft_putstr("Error\nWrong File extension");
 		return (0);
 	}
 	fd = open(filename, O_RDONLY);
 	map = get_map_objects(fd);
 	if (validate_map_objects(&map) != 1)
 	{
-		ft_putstr("not valid MAP");
+		ft_putstr("Error\nnot valid MAP");
 		return (0);
 	}
 	fd = open(filename, O_RDONLY);
@@ -147,7 +147,7 @@ int	valid_all_2(char *filename, int nb_lines)
 	fd = open(filename, O_RDONLY);
 	if (check_borders(fd, nb_lines) == 0)
 	{
-		ft_putstr("borders  not good");
+		ft_putstr("Error\nborders  not good");
 		return (0);
 	}
 	close(fd);
@@ -155,7 +155,7 @@ int	valid_all_2(char *filename, int nb_lines)
 	fd = open(filename, O_RDONLY);
 	if (check_map_rectangular(fd, nb_lines, width) == 0)
 	{
-		ft_putstr("not rectangular");
+		ft_putstr("Error\nnot rectangular");
 		close(fd);
 		return (0);
 	}
