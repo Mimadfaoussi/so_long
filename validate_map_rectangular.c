@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:07:34 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 01:31:27 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 01:57:28 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ int	check_borders(int fd, int nb_lines)
 		free(line);
 		line = get_next_line(fd);
 	}
-	free(line);
 	return (1);
 }
 
@@ -123,14 +122,14 @@ int	valid_all(char *filename)
 
 	if (check_map_extension(filename) == 1)
 	{
-		printf("bad extension");
+		ft_putstr("bad extension");
 		return (0);
 	}
 	fd = open(filename, O_RDONLY);
 	map = get_map_objects(fd);
 	if (validate_map_objects(&map) != 1)
 	{
-		printf("bad obj");
+		ft_putstr("bad obj");
 		return (0);
 	}
 	fd = open(filename, O_RDONLY);
@@ -148,7 +147,7 @@ int	valid_all_2(char *filename, int nb_lines)
 	fd = open(filename, O_RDONLY);
 	if (check_borders(fd, nb_lines) == 0)
 	{
-		printf("borders  not good");
+		ft_putstr("borders  not good");
 		return (0);
 	}
 	close(fd);
@@ -156,7 +155,7 @@ int	valid_all_2(char *filename, int nb_lines)
 	fd = open(filename, O_RDONLY);
 	if (check_map_rectangular(fd, nb_lines, width) == 0)
 	{
-		printf("not rectangular");
+		ft_putstr("not rectangular");
 		close(fd);
 		return (0);
 	}

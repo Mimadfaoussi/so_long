@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:28:50 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 01:28:27 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 01:55:18 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,3 @@ int	validate_map_objects(t_map **map_ref)
 	free(map);
 	return (1);
 }
-
-// int main(void)
-// {
-// 	int		fd;
-// 	int		nb_lines;
-
-// 	fd = open("./maps/map.bef",O_RDONLY);
-// 	nb_lines = get_nb_lines(fd);
-// 	close(fd);
-// 	fd = open("./maps/map.bef",O_RDONLY);
-// 	printf("%d\n",validate_map_objects(get_map_objects(fd)));
-// 	return (0);
-// }

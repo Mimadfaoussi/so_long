@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:13:03 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 00:28:33 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 03:15:36 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,8 @@ int	start_mlx(t_vars **x)
 	*x = (t_vars *)malloc(sizeof(t_vars));
 	if (!*x)
 		return (1);
-	(*x)->m_height = get_map_height("./maps/map.bef");
-	(*x)->m_width = get_map_width("./maps/map.bef");
+	(*x)->m_height = get_map_height("./maps/map.ber");
+	(*x)->m_width = get_map_width("./maps/map.ber");
 	(*x)->collectible = 0;
 	(*x)->valid_collectible = 0;
 	(*x)->valid_path = 0;
@@ -100,6 +100,7 @@ int	start_mlx(t_vars **x)
 
 void	clean_up(t_vars **x)
 {
+	mlx_delete_image((*x)->mlx, (*x)->img[0]);
 	mlx_delete_image((*x)->mlx, (*x)->img[2]);
 	mlx_delete_image((*x)->mlx, (*x)->img[1]);
 	mlx_delete_image((*x)->mlx, (*x)->img[3]);
@@ -107,6 +108,7 @@ void	clean_up(t_vars **x)
 	mlx_delete_image((*x)->mlx, (*x)->img[5]);
 	mlx_delete_image((*x)->mlx, (*x)->img[6]);
 	mlx_delete_image((*x)->mlx, (*x)->img[7]);
+	mlx_delete_texture((*x)->texture[0]);
 	mlx_delete_texture((*x)->texture[1]);
 	mlx_delete_texture((*x)->texture[2]);
 	mlx_delete_texture((*x)->texture[3]);

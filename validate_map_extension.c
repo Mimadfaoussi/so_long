@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:09:18 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 00:32:30 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 03:03:29 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	check_map_extension(char *filename)
 	length = ft_strlen(filename);
 	if (length < 4)
 		return (1);
-	if (is_same(filename + length - 4, ".bef") == 1)
+	if (is_same(filename + length - 4, ".ber") == 1)
 		return (0);
 	else
 		return (1);

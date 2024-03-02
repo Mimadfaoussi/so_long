@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:11:14 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 01:38:15 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 03:35:02 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,11 @@ void	create_map(t_vars *x, int rows, int cols)
 	}
 }
 
+// void leaks(void)
+// {
+// 	system("leaks solong");
+// }
+
 int	main(int argc, char **argv)
 {
 	t_vars	*x;
@@ -100,6 +105,7 @@ int	main(int argc, char **argv)
 	mlx_key_hook(x->mlx, &ft_hook, &x);
 	mlx_close_hook(x->mlx, &mlx_closehook, &x);
 	mlx_loop(x->mlx);
+	// atexit(&leaks);
 	clean_up(&x);
 	return (EXIT_SUCCESS);
 }
