@@ -6,11 +6,16 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:11:14 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 03:35:02 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 05:58:15 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solong.h"
+
+// void leaks(void)
+// {
+// 	system("leaks so_long");
+// }
 
 void	ft_hook(mlx_key_data_t keydata, void *param)
 {
@@ -20,7 +25,6 @@ void	ft_hook(mlx_key_data_t keydata, void *param)
 	if (mlx_is_key_down((*x)->mlx, MLX_KEY_ESCAPE))
 	{
 		clean_up(x);
-		system("leaks solong");
 		exit(0);
 	}
 	if (keydata.key == MLX_KEY_UP && keydata.action == MLX_RELEASE)
@@ -76,10 +80,6 @@ void	create_map(t_vars *x, int rows, int cols)
 	}
 }
 
-// void leaks(void)
-// {
-// 	system("leaks solong");
-// }
 
 int	main(int argc, char **argv)
 {
@@ -89,25 +89,26 @@ int	main(int argc, char **argv)
 		return (1);
 	if (valid_all(argv[1]) == 0)
 		return (1);
-	if (start_mlx(&x) == 1)
+	if (start_mlx(&x, argv[1]) == 1)
 		return (1);
-	create_table(argv[1], &x, x->m_width, x->m_height);
-	if (check_valid_path(&x) == 0)
-	{
-		printf("not valid path no exit or collectibles");
-		clean_up(&x);
-		return (1);
-	}
 	if (!x->mlx)
 		return (1);
 	setup_img(x);
+	create_table(argv[1], &x, x->m_width, x->m_height);
+	if (check_valid_path(&x) == 0)
+	{
+		clean_up(&x);
+		return (1);
+	}
 	create_map(x, x->m_height, x->m_width);
 	mlx_key_hook(x->mlx, &ft_hook, &x);
 	mlx_close_hook(x->mlx, &mlx_closehook, &x);
 	mlx_loop(x->mlx);
-	// atexit(&leaks);
 	clean_up(&x);
 	return (EXIT_SUCCESS);
 }
+
+
+// atexit(&leaks);
 //./exec ./maps/map.bef
 // gcc  game_logic.c validate_map_extension.c validate_map_rectangular.c validate_map_objects.c solong.c setup_all.c create_table.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c ../libmlx42.a -lglfw -framework Cocoa -framework OpenGL -framework IOKit -o exec

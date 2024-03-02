@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 09:42:39 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 02:14:19 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 05:30:27 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,15 +120,3 @@ char	*get_next_line(int fd)
 	return (next_line);
 }
 
-// int main()
-// {
-// 	char *line;
-// 	int	fd;
-
-// 	fd = open("./maps/map.bef",O_RDONLY);
-// 	line = get_next_line(fd);
-// 	printf("%s",line);
-// 	//free(line);
-// 	system("leaks exec");
-// 	return (0);
-// }

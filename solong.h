@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:16:09 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 01:46:24 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 05:37:18 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	clean_up(t_vars **x);
 void	error(void);
 //void	ft_hook(void *param);
 void	ft_hook(mlx_key_data_t keydata, void *param);
-int		start_mlx(t_vars **x);
+int		start_mlx(t_vars **x, char *filename);
 
 /** get next line part */
 

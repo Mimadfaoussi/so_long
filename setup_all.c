@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:13:03 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 03:15:36 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 05:36:49 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ int	get_map_width(char *filename)
 
 void	setup_img(t_vars *x)
 {
-	x->texture[0] = mlx_load_png("./temp/wall.png");
-	x->texture[1] = mlx_load_png("./temp/solid_wall.png");
-	x->texture[2] = mlx_load_png("./temp/seeds.png");
-	x->texture[3] = mlx_load_png("./temp/before_heaven.png");
-	x->texture[4] = mlx_load_png("./temp/bird.png");
-	x->texture[5] = mlx_load_png("./temp/heaven.png");
-	x->texture[6] = mlx_load_png("./temp/predators.png");
-	x->texture[7] = mlx_load_png("./temp/game_over.png");
+	x->texture[0] = mlx_load_png("./textures/wall.png");
+	x->texture[1] = mlx_load_png("./textures/solid_wall.png");
+	x->texture[2] = mlx_load_png("./textures/seeds.png");
+	x->texture[3] = mlx_load_png("./textures/before_heaven.png");
+	x->texture[4] = mlx_load_png("./textures/bird.png");
+	x->texture[5] = mlx_load_png("./textures/heaven.png");
+	x->texture[6] = mlx_load_png("./textures/predators.png");
+	x->texture[7] = mlx_load_png("./textures/game_over.png");
 	x->img[0] = mlx_texture_to_image(x->mlx, x->texture[0]);
 	x->img[1] = mlx_texture_to_image(x->mlx, x->texture[1]);
 	x->img[2] = mlx_texture_to_image(x->mlx, x->texture[2]);
@@ -77,7 +77,7 @@ void	setup_img(t_vars *x)
 	x->img[7] = mlx_texture_to_image(x->mlx, x->texture[7]);
 }
 
-int	start_mlx(t_vars **x)
+int	start_mlx(t_vars **x, char *filename)
 {
 	int	height;
 	int	width;
@@ -85,8 +85,8 @@ int	start_mlx(t_vars **x)
 	*x = (t_vars *)malloc(sizeof(t_vars));
 	if (!*x)
 		return (1);
-	(*x)->m_height = get_map_height("./maps/map.ber");
-	(*x)->m_width = get_map_width("./maps/map.ber");
+	(*x)->m_height = get_map_height(filename);
+	(*x)->m_width = get_map_width(filename);
 	(*x)->collectible = 0;
 	(*x)->valid_collectible = 0;
 	(*x)->valid_path = 0;

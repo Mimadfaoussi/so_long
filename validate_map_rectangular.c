@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:07:34 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/03/02 01:57:28 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/03/02 05:27:37 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,14 +122,14 @@ int	valid_all(char *filename)
 
 	if (check_map_extension(filename) == 1)
 	{
-		ft_putstr("bad extension");
+		ft_putstr("Wrong File extension");
 		return (0);
 	}
 	fd = open(filename, O_RDONLY);
 	map = get_map_objects(fd);
 	if (validate_map_objects(&map) != 1)
 	{
-		ft_putstr("bad obj");
+		ft_putstr("Objects  not valid");
 		return (0);
 	}
 	fd = open(filename, O_RDONLY);
