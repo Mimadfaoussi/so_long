@@ -1,9 +1,13 @@
 # So Long
 
+
 ##  Description
 **So Long** is a graphical project from the **42 School curriculum** designed to deepen the understanding of **game development fundamentals**, including rendering, event handling, and basic game mechanics. The objective is to create a small 2D game where the player must navigate through a maze, collecting items and avoiding obstacles to reach an exit.
 
 This project helped enhance my understanding of **2D graphics programming**, **event-driven systems**, and **memory management** in C.
+
+![so_long](img/so_long.png)
+
 
 ---
 
@@ -93,4 +97,3 @@ This project helped enhance my understanding of **2D graphics programming**, **e
 
 ## enjoy :)
 
-![so_long](img/so_long.png)
